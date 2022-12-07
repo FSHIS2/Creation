@@ -4,8 +4,7 @@ namespace CreationMethods.Tests {
         [Fact]
         public void CreateAProductPackageWithOnlyInternet()
         {
-            var internetLabel = "100MB";
-            var productPackage = ProductPackage.CreateProductPackage(internetLabel);
+            var productPackage = ProductPackage.CreateProductPackage("100MB");
 
             Assert.True(productPackage.HasInternet());
             Assert.False(productPackage.HasVoip());
@@ -15,9 +14,7 @@ namespace CreationMethods.Tests {
         [Fact]
         public void CreateWithInternetAndVoip()
         {
-            var internetLabel = "100MB";
-            var telephoneNumber = 91233788;
-            var productPackage = ProductPackage.CreateProductPackage(internetLabel, telephoneNumber);
+            var productPackage = ProductPackage.CreateProductPackage("100MB", 91233788);
 
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasVoip());
@@ -27,7 +24,9 @@ namespace CreationMethods.Tests {
         [Fact]
         public void CreateWithInternetAndTv()
         {
-            var productPackage = new ProductPackage("100MB", new[] {"LaLiga", "Estrenos"});
+            var internetLabel = "100MB";
+            var tvChannels = new[] {"LaLiga", "Estrenos"};
+            var productPackage = ProductPackage.CreateProductPackage(internetLabel, tvChannels);
 
             Assert.True(productPackage.HasInternet());
             Assert.False(productPackage.HasVoip());

@@ -43,5 +43,11 @@
             var productPackage = new ProductPackage(internetLabel, telephoneNumber, null);
             return productPackage;
         }
+
+        public ProductPackage CreateProductPackage(string internetLabel, string[] tvChannels) {
+            var productPackage = new ProductPackage(internetLabel, tvChannels);
+            return productPackage;
+        }
+
     }
 }
