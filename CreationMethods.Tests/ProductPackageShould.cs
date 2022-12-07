@@ -36,11 +36,12 @@ namespace CreationMethods.Tests {
         [Fact]
         public void CreateWithInternetVoipAndTv()
         {
-            var productPackage = new ProductPackage("100MB", 91233788, new[] {"LaLiga", "Estrenos"});
+            var productPackage = ProductPackage.CreateProductPackage("100MB", 91233788, new[] {"LaLiga", "Estrenos"});
 
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasVoip());
             Assert.True(productPackage.HasTv());
         }
+
     }
 }

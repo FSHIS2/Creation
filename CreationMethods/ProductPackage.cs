@@ -49,5 +49,10 @@
             return productPackage;
         }
 
+        public static ProductPackage CreateProductPackage(string internetLabel, int telephoneNumber, string[] tvChannels) {
+            var productPackage = new ProductPackage(internetLabel, telephoneNumber, tvChannels);
+            return productPackage;
+        }
+
     }
 }
