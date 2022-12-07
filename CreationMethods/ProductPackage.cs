@@ -5,12 +5,6 @@
         private readonly int? telephoneNumber;
         private readonly string[] tvChannels;
 
-        public ProductPackage(string internetLabel, int telephoneNumber)
-        {
-            this.internetLabel = internetLabel;
-            this.telephoneNumber = telephoneNumber;
-        }
-
         public ProductPackage(string internetLabel, string[] tvChannels)
         {
             this.internetLabel = internetLabel;
@@ -42,6 +36,11 @@
 
         public static ProductPackage CreateProductPackage(string internetLabel) {
             var productPackage = new ProductPackage(internetLabel, null);
+            return productPackage;
+        }
+
+        public static ProductPackage CreateProductPackage(string internetLabel, int telephoneNumber) {
+            var productPackage = new ProductPackage(internetLabel, telephoneNumber, null);
             return productPackage;
         }
     }

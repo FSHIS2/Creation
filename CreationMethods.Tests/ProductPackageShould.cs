@@ -15,7 +15,9 @@ namespace CreationMethods.Tests {
         [Fact]
         public void CreateWithInternetAndVoip()
         {
-            var productPackage = new ProductPackage("100MB", 91233788);
+            var internetLabel = "100MB";
+            var telephoneNumber = 91233788;
+            var productPackage = ProductPackage.CreateProductPackage(internetLabel, telephoneNumber);
 
             Assert.True(productPackage.HasInternet());
             Assert.True(productPackage.HasVoip());
